@@ -9,7 +9,6 @@ public abstract class Attraction {
 	private int numPlayers = players.size();
 	private int numDeadPlayers = deadPlayers.size();
 	private int maxPlayersPerRide;
-	private int risk;
 	
 	private Random rand = new Random();
 	
@@ -17,11 +16,15 @@ public abstract class Attraction {
 		return numPlayers;
 	}
 	
+	public int getNumDeadPlayers() {
+		return numDeadPlayers;
+	}
+	
 	public int getMaxPlayersPerRide() {
 		return maxPlayersPerRide;
 	}
 	
-	public void calculateRisk(int numRisk) {
+	public void calculateDead(int numRisk) {
 		int pplDead = numPlayers * numRisk / 100;
 		
 		for (int i = 0; i<pplDead; i++) {
